@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+/* Keyframes */
+
+@keyframes popup {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Affichage */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Page qui s'affiche lors du chargement */
+
+#no-correct-code 
+{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#no-correct-code div.bg
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
+
+#no-correct-code div.bg img 
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#no-correct-code div.form 
+{
+    background-color: #B32F1A;
+    position: absolute;
+    z-index: 2;
+    width: 40vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+#no-correct-code div.form h1
+{
+    margin-bottom: 50px;
+    margin-top: 30px;
+    text-decoration: underline;
+}
+
+#no-correct-code div.form p 
+{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 10px 40px;
+    line-height: 35px;
+}
+
+#no-correct-code div.form label
+{
+    margin-top: 30px;
+}
+
+#no-correct-code div.form div#submitButton
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 80px;
+    background-color: green;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 40px;
+    transition: 0.4s;
+}
+
+#no-correct-code div.form div#submitButton:hover 
+{
+    transform: scale(1.2);
+    background-color: greenyellow;
+}
+
+#no-correct-code div.form label input
+{
+    background-color: grey;
+    border: none;
+    transition: 0.1;
+}
+
+#no-correct-code div.form label input:focus 
+{
+    background-color: #fff;
+}
+
+/* Avertissement lorsque le code est faux */
+
+#false-code
+{
+    position: absolute;
+    background-color: black;
+    padding: 10px;
+    font-size: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    top: 71.5vh;
+    color: white;
+    text-align: center;
+    z-index: 5;
+}
+
+.still 
+{ 
+    opacity: 0;
+}
+
+.bouger
+{ 
+    opacity: 1;
+    -moz-animation-name: popup;
+    -o-animation-name: popup;
+    -webkit-animation-name: popup;
+    animation-duration: 5s;
+}
+
+/* Page qui s'affiche lorsqu'il y a le bon code */
+
+#correct-code 
+{
+    display: none;
+}
+
