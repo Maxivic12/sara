@@ -57,6 +57,32 @@
     }
 }
 
+@keyframes text-anime {
+    0%, 10%, 100% {
+        width: 0%;
+    }
+    70%, 90% {
+        width: 100%;
+    }
+}
+
+@keyframes fly-separateur {
+    0%, 50% {
+        transform: rotate(90deg);
+    }
+    0%, 100% {
+        left: 0%;
+    }
+    50% {
+        left: 95%;
+    }
+    51% {
+        transform: rotate(270deg);
+    }
+    99% {
+        transform: rotate(270deg)
+    }
+}
 
 /* Affichage */
 
@@ -195,6 +221,7 @@
     -moz-animation-name: popup;
     -o-animation-name: popup;
     -webkit-animation-name: popup;
+    -ms-animation-name: popup;
     animation-duration: 5s;
 }
 
@@ -242,6 +269,7 @@ section.top-page div.top-phrase
     -o-animation: changeTextColor 2s ease-in-out 0s infinite alternate;
     -webkit-animation: changeTextColor 2s ease-in-out 0s infinite alternate;
     -moz-animation: changeTextColor 2s ease-in-out 0s infinite alternate;
+    -ms-animation: changeTextColor 2s ease-in-out 0s infinite alternate;
 }
 
 section.top-page div.avion
@@ -253,6 +281,7 @@ section.top-page div.avion
     -o-animation: fly 3s ease-in-out 0s infinite;
     -webkit-animation: fly 3s ease-in-out 0s infinite;
     -moz-animation: fly 3s ease-in-out 0s infinite;
+    -ms-animation: fly 3s ease-in-out 0s infinite;
 }
 
 section.top-page div.avion img 
@@ -268,6 +297,8 @@ section.photo-card
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 120vh;
 }
 
 section.photo-card .c
@@ -289,7 +320,7 @@ section.photo-card .c img
     height: 100%;
 }
 
-section.photo-card .jeune 
+section.photo-card .ph
 {
     display: flex;
     flex-direction: column;
@@ -298,7 +329,7 @@ section.photo-card .jeune
     height: 400px;
 }
 
-section.photo-card .jeune .photo-group
+section.photo-card .ph .photo-group
 {
     display: flex;
     align-items: center;
@@ -306,7 +337,68 @@ section.photo-card .jeune .photo-group
     width: 70vw;
 }
 
+section.photo-card .ph h1 
+{
+    position: relative;
+    font-size: 45px;
+    text-transform: uppercase;
+    color: #fff;
+    -webkit-text-stroke: 2px #383d52;
+    -o-text-stroke: 2px #383d52;
+    -moz-text-stroke: 2px #383d52;
+    -ms-text-stroke: 2px #383d52;
+}
 
+section.photo-card .ph .anim-text
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+section.photo-card .ph h1:before 
+{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    color: #529d52;
+    -webkit-text-stroke: 2px #529d52;
+    -o-text-stroke: 2px #529d52;
+    -moz-text-stroke: 2px #529d52;
+    -ms-text-stroke: 2px #529d52;
+    border-right: 2px solid #529d52;
+    -webkit-animation: text-anime 6s linear infinite;
+    -o-animation: text-anime 6s linear infinite;
+    -moz-animation: text-anime 6s linear infinite;
+    -ms-animation: text-anime 6s linear infinite;
+}
 
+.separateur
+{
+    position: relative;
+    width: 90vw;
+}
 
+.separateur-coeur
+{
+    position: absolute;
+    width: 80px;
+    transform: rotate(90deg);
+    top: 0;
+    left: 0;
+    -webkit-animation: fly-separateur 6s linear infinite;
+    -o-animation: fly-separateur 6s linear infinite;
+    -moz-animation: fly-separateur 6s linear infinite;
+    -ms-animation: fly-separateur 6s linear infinite;
+}
+
+.separateur-coeur img
+{
+    width: 100%;
+}
