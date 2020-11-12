@@ -307,7 +307,7 @@ section.photo-card .c
     overflow: hidden;
 }
 
-section.photo-card .photo1
+section.photo-card .photo1, photo2
 {
     width: 269px;
     background-color: #000;
